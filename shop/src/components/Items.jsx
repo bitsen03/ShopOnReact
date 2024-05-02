@@ -1,6 +1,5 @@
 import React, { useContext} from 'react';
 import { useSelector } from 'react-redux';
-import { ItemsContext } from '../App.js'; 
 import Item from './Item.jsx';
 import { selectAllProducts } from '../slices/productsSlice.js';
 

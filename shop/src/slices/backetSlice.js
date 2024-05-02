@@ -7,9 +7,9 @@ import allProducts from '../allProducts';
 const backetAdapter = createEntityAdapter();
 
 const initialState = backetAdapter.getInitialState({
-    ids: [allProducts.products[0]],
+    ids: [],
     entities: {
-        [allProducts.products[0].id]: allProducts.products[0] // Используем id продукта как ключ и сам продукт как значение
+      
     }
 });
 
@@ -19,9 +19,10 @@ const backetSlice = createSlice({
     reducers: {
         addOrders: backetAdapter.addMany,
         addOrder: backetAdapter.addOne,
+        removeOrder: backetAdapter.removeOne,
     }
 })
 
 export const selectAllbacketItems = state => state.backet.entities;
-export const {addOrder, addOrders} = backetSlice.actions;
+export const {addOrder, addOrders, removeOrder} = backetSlice.actions;
 export default backetSlice.reducer;
