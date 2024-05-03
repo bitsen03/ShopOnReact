@@ -1,6 +1,6 @@
-import React from "react";
+import { createContext } from 'react';
 
-const CategoriesContext = React.createContext({});
+const CategoriesContext = createContext({});
 
 const Categories = ({ children }) => {
   let category = "all";
