@@ -1,18 +1,15 @@
-import { useState, createContext, useContext } from "react";
 import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Items from "./components/Items";
-
+import Main from "./components/Main";
 
 function App() {
-
-
   return (
     <div className="wrapper">
         <Header />
-        <Items />
-      <Footer />
+        <Main />
+        <Footer />
     </div>
   );
 }

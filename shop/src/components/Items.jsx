@@ -5,7 +5,7 @@ import { selectAllProducts } from '../slices/productsSlice.js';
 
 export default function Items() {
   const items = useSelector(selectAllProducts);
-  
+  // const chouseCategory = items.filter(item => item.category === category)
   return (
     <main>
       {items.map(item => (

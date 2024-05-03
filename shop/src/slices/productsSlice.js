@@ -19,6 +19,7 @@ const productsSlice = createSlice({
     }
 })
 
+export const selectCategory = (state, category) => Object.values(state.products.entities).filter(el => el.category === category)
 export const selectAllProducts = state => state.products.entities;
 export const {addProducts} = productsSlice.actions;
 export default productsSlice.reducer;

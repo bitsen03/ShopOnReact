@@ -2,27 +2,39 @@ import {
     createSlice,
     createEntityAdapter,
 } from '@reduxjs/toolkit';
-import allProducts from '../allProducts';
 
-const backetAdapter = createEntityAdapter();
 
-const initialState = backetAdapter.getInitialState({
-    ids: [],
-    entities: {
-      
-    }
-});
+const initialState = {
+    items: {}
+}
+
 
 const backetSlice = createSlice({
     name: 'backet',
     initialState,
     reducers: {
-        addOrders: backetAdapter.addMany,
-        addOrder: backetAdapter.addOne,
-        removeOrder: backetAdapter.removeOne,
+        addOrder: (state, action) => {
+            const {id} = action.payload;
+            if (state.items[id]){
+                state.items[id].count += 1;
+            } else {
+                state.items[id] = {...action.payload, 'count': 1,}
+            }
+        },
+        removeOrder: (state, action) => {
+            const {id} = action.payload;
+            if (state.items[id]){
+                state.items[id].count -= 1;
+                if (state.items[id].count === 0){
+                    delete state.items[id];
+                }
+            } 
+               
+            
+        },
     }
 })
 
-export const selectAllbacketItems = state => state.backet.entities;
-export const {addOrder, addOrders, removeOrder} = backetSlice.actions;
+export const selectAllbacketItems = state => state.backet.items;
+export const {addOrder, removeOrder} = backetSlice.actions;
 export default backetSlice.reducer;
