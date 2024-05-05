@@ -1,6 +1,7 @@
 import Order from "./Order"
 import { selectAllbacketItems } from "../slices/backetSlice.js";
 import { useSelector } from 'react-redux';
+
 export default function Orders () {
     let resultPrice = 0;
     const itemsBacket = Object.values(useSelector(selectAllbacketItems));

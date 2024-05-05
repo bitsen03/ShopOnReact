@@ -97,7 +97,18 @@ header .shop-cart p {
 header .shop-cart h3 {
     text-align: center;
 }
-
+.category-div {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+.category-btn{
+    height: auto;
+    border: none;
+    border-radius: 20%;
+    width: 80px;
+    padding: 2px;
+}
 .delete-item {
     font-weight: 600;
     font-size: 25px;
@@ -120,13 +131,18 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-main .item {
+main .item, .full-item .item {
     width: 30%;
     margin-bottom: 50px;
+    padding-bottom: 10px;
     background: #f5f5f5;
     overflow: hidden;
     position: relative;
 }
+.full-item .item  {
+    width: 100%;
+}
+
 .buy-btn {
     padding: 5px;
     background-color:  #5fa36a;
@@ -139,23 +155,48 @@ main .item {
     transition: 500ms;
     text-align: center;
 }
+.full-item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    overflow: auto;
+}
+.full-item > div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 9px;
+}
+.exit-fullScrean {
+    position: absolute;
+    top: 10px;  
+    right: 30px;
+}
 .buy-btn:hover {
     transform:scale(1.1)
 }
-main .item img {
+main .item img, .full-item .item img{
     width: 100%;
     border-radius: 10px 10px 0 0;
     transition: transform 500ms ease;
     height: 300px;
 }
-main h2, main p, main b {
+main h2, main p, main b, .full-item h2 , .full-item p, .full-item b {
     margin: 10px 20px;
 }
-main b {
+main b, .full-item b {
     color: #5fa36a;
     padding-bottom: 20px;
 }
-.add-to-cart {
+
+.add-to-cart
+{
     height: 30px;
     width: 30px;
     display: flex;

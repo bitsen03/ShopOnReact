@@ -1,6 +1,5 @@
 import { 
     createSlice,
-    createEntityAdapter,
 } from '@reduxjs/toolkit';
 
 
@@ -29,8 +28,6 @@ const backetSlice = createSlice({
                     delete state.items[id];
                 }
             } 
-               
-            
         },
     }
 })

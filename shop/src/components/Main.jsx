@@ -1,13 +1,27 @@
 import Items from "./Items"
-import ChooseCategory from './ChooseCategory';
-import Categories from "./Categories";
+import ChooseCategory from './ChooseCategory'
+import CategoriesContext from "./CategoriesContext";
+import { useState } from "react";
+import ShowFullItems from "./ShowFullItems";
 
-export default function Main (){
+const CategoriesProvider  = ({ children }) => {
+    const [category, setCategory] = useState('all');
+    const [showFullItems, setShowItems] = useState(false)
+    const [item, setItem] = useState({})
 
     return (
-    <Categories>
+      <CategoriesContext.Provider value={{category, setCategory, showFullItems, setShowItems, item, setItem}}>
+        {children}
+      </CategoriesContext.Provider>
+    );
+  };
+
+export default function Main (){
+    return (
+    <CategoriesProvider>
         <ChooseCategory />
         <Items />
-    </Categories>
+        <ShowFullItems />
+    </CategoriesProvider>
     )
 }

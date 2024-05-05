@@ -9,7 +9,7 @@ export default function Order ({children}) {
     }
 
     const handleRemoveOrder = () => {
-               dispatch(removeOrder(children));
+        dispatch(removeOrder(children));
     }
 
     return (
