@@ -349,7 +349,7 @@ export default {
     {
       id: 20,
       title: 'Freckle Treatment Cream- 15gm',
-      description: "Fair & Clear is Pakistan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
+      description: "Fair & Clear is Pakitan's only pure Freckle cream which helpsfade Freckles, Darkspots and pigments. Mercury level is 0%, so there are no side effects.",
       price: 70,
       discountPercentage: 16.99,
       rating: 4.06,
