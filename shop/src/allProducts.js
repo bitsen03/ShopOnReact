@@ -1,3 +1,6 @@
+  
+import axios from 'axios';
+
 export default {
     products: [{
       id: 1,
@@ -1111,4 +1114,13 @@ export default {
       ],
     }],
   };
-  
+
+
+axios.get('http://localhost:4000/')
+  .then(response => {
+    // Обработка данных, полученных от сервера
+    console.log(response.data); // Ваши данные будут доступны здесь
+  })
+  .catch(error => {
+    console.error('Ошибка при получении данных:', error);
+  });

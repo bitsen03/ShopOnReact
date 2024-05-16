@@ -1,15 +1,7 @@
 FROM node:20
-
 WORKDIR /app
-
-# Важно для кеширования слоев
-COPY package.json package.json
-COPY package-lock.json package-lock.json
-
-RUN npm ci
-
-COPY . /app
-
+COPY package.json .
+RUN npm install
+COPY . .
 EXPOSE 3000
-
-CMD npm start
+CMD ["npm", "start"]

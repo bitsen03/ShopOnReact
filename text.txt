@@ -1,2 +1,0 @@
-docker build -t my-nodejs-app . / build
-docker run -d -p 8080:8080 my-nodejs-app /run

@@ -25,7 +25,7 @@ export default function Item({children}) {
 
     return (
         <div className="item">
-            <img src={children.images[0]} onClick={() => handleShowItems(children)}/>
+            <img src={children.images[0]} alt={children.title} onClick={() => handleShowItems(children)}/>
             <h2>{children.title}</h2>
             <p>{children.description}</p>
             <b>{children.price}$</b>

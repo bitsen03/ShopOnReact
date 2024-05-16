@@ -1,10 +1,21 @@
 const express = require('express');
+const cors = require('cors');
+const products = require('./products'); // Импорт модуля products
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
+app.use(cors());
+  
 app.get('/', (req, res) => {
-  res.send('Home Route');
+  // Отправляем данные клиенту
+  res.json(products);
 });
-app.listen(port, () =>
-  console.log(`Server running on port ${port}, http://localhost:${port}`)
-);
+
+app.get('/api/products', (req, res) => {
+  // Отправляем данные клиенту
+  res.json(products);
+});
+
+app.listen(port, () => {
+  console.log(`Сервер запущен на порту ${port}`);
+});
