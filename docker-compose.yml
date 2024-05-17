@@ -8,7 +8,7 @@ services:
     volumes:
       - ./api:/app
   client:
-    build: ./client
+    build: ./shop
     container_name: client_frontend
     ports:
       - '3000:3000'
