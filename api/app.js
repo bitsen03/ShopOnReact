@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const products = require('./products'); // Импорт модуля products
+import express from 'express';
+import cors from 'cors';
+import products from  './products.js'; // Импорт модуля products
 
 const app = express();
 const port = process.env.PORT || 4000;
